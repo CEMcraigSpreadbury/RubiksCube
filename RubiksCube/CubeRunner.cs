@@ -42,6 +42,10 @@ namespace RubiksCube
             }
         }
 
+        /// <summary>
+        /// Switch on the users input, call methods to manipulate the Cube and perform other functions
+        /// </summary>
+        /// <param name="input"></param>
         public void HandleInput(string input)
         {
             switch (input)

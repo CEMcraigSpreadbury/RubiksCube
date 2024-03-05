@@ -84,6 +84,12 @@ namespace RubiksCube.Models
             RotateCardinalFaces(face, clockwise);
         }
 
+        /// <summary>
+        /// Rotate the connecting faces in a Cardinal direction from the Face being rotated
+        /// Specifically the 3 Cubelets that connect
+        /// </summary>
+        /// <param name="face">The Face being rotated</param>
+        /// <param name="clockwise">The direction to rotate, defaults to True</param>
         public void RotateCardinalFaces(Face face, bool clockwise = true)
         {
             // Get each of the Cardinal Faces Cubelets, and create a copy of them to reference their original state

@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using RubiksCube;
+using RubiksCube.Models;
+using System.ComponentModel.Design;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        CubeRunner runner = new CubeRunner();
+        runner.Run();
+    }
+}

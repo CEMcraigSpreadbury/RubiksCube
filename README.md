@@ -50,7 +50,7 @@ Welcome to the Rubik's Cube Console Application! This project is a simple consol
 
 ## Reset
 
-If you ever get stuck and want start fresh, simply type:
+If you ever get stuck and want to start fresh, simply type:
 ```
 reset
 ```

@@ -8,6 +8,7 @@ namespace RubiksCube
     {
         public Cube Cube;
         public List<string> Commands = ["F", "R", "U", "B", "L", "D", "F`", "R`", "U`", "B`", "L`", "D`"];
+        private const int ScrambleCount = 20;
 
         public CubeRunner()
         {
@@ -54,6 +55,13 @@ namespace RubiksCube
                 case "EXIT":
                     System.Environment.Exit(0);
                     break;
+                case "SCRAMBLE":
+                    for (int i = 0; i < ScrambleCount + 1; i++)
+                    {
+                        HandleInput(GetRandomInput());
+                        Console.WriteLine();
+                    }
+                    break;
                 default:
                     var splitInputs = input.Split(" ");
 
@@ -87,6 +95,7 @@ namespace RubiksCube
             Console.WriteLine("Reset the Cube by typing Reset");
             Console.WriteLine("String rotations together by separating with a space e.g F U L");
             Console.WriteLine("Faces rotate Clockwise by default, add a ` BackTick to each Face rotation e.g F` R` U L to rotate that Face Counter Clockwise");
+            Console.WriteLine("Scramble the Cube using 'scramble'");
         }
 
         /// <summary>
@@ -100,6 +109,18 @@ namespace RubiksCube
                 Console.Write(c);
                 Thread.Sleep(25);
             }
+        }
+
+        /// <summary>
+        /// Returns a random rotation Command
+        /// </summary>
+        /// <returns></returns>
+        private string GetRandomInput()
+        {
+            var random = new Random();
+            var randomCommandIndex = random.Next(0, Commands.Count);
+
+            return Commands[randomCommandIndex];
         }
     }
 }
